@@ -4,10 +4,10 @@
 export const personalInfo = {
   name: "Carlos Alberto",
   lastName: "Izaguirre",
-  role: "Desarrollador Full Stack",
+  role: "Senior Full Stack Developer",
   tagline: "Construyo experiencias digitales que impulsan negocios",
   description:
-    "Especializado en crear aplicaciones web modernas, escalables y de alto rendimiento utilizando Django, Python, JavaScript y tecnologías frontend de vanguardia. Transformo ideas en productos digitales que generan resultados reales.",
+    "Construyo aplicaciones web completas — desde la base de datos hasta el pixel final. Django y Python en el back, JavaScript y Tailwind en el front. Si tienes una idea, yo la hago realidad.",
   email: "carlosizaguirres705@gmail.com",
   phone: "+1 470-529-4775",
   location: "Atlanta, Georgia",
@@ -19,7 +19,7 @@ export const personalInfo = {
 
 export const stats = [
   { value: "5+", label: "Años de Experiencia" },
-  { value: "50+", label: "Proyectos Completados" },
+  { value: "6", label: "Proyectos Completados" },
   { value: "30+", label: "Clientes Satisfechos" },
   { value: "99%", label: "Tasa de Satisfacción" },
 ];
@@ -29,7 +29,7 @@ export const projects = [
     id: 1,
     title: "E-Commerce Platform",
     description:
-      "Plataforma de comercio electrónico completa con carrito de compras, sistema de pagos integrado, gestión de inventario y panel de administración.",
+      "Una tienda online que armé de cero — carrito, pagos, inventario y un panel admin para que el cliente maneje todo sin depender de nadie.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
     technologies: ["Django", "Python", "JavaScript", "Tailwind CSS", "PostgreSQL"],
@@ -41,7 +41,7 @@ export const projects = [
     id: 2,
     title: "Dashboard Analítico",
     description:
-      "Panel de control interactivo con visualización de datos en tiempo real, reportes automatizados y métricas de rendimiento empresarial.",
+      "Panel de métricas en tiempo real para un negocio que necesitaba ver sus números claros. Gráficas interactivas, reportes automáticos y filtros por fecha.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     technologies: ["Python", "Django REST", "JavaScript", "Bootstrap", "Chart.js"],
@@ -53,7 +53,7 @@ export const projects = [
     id: 3,
     title: "Sistema de Gestión",
     description:
-      "Sistema completo de gestión empresarial con módulos de inventario, facturación, reportes y control de usuarios con roles y permisos.",
+      "Sistema interno para una empresa: inventario, facturación, usuarios con roles. Lo hice pensando en que cualquier empleado pudiera usarlo sin capacitación larga.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     technologies: ["Django", "Python", "HTML", "CSS", "Bootstrap"],
@@ -65,7 +65,7 @@ export const projects = [
     id: 4,
     title: "Landing Page Corporativa",
     description:
-      "Sitio web corporativo moderno con diseño responsive, animaciones suaves, formulario de contacto y optimización SEO completa.",
+      "Página corporativa que convierte visitantes en clientes. Diseño responsive, animaciones suaves y formulario de contacto conectado directo al correo del dueño.",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
     technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
@@ -77,7 +77,7 @@ export const projects = [
     id: 5,
     title: "API REST Microservicios",
     description:
-      "Arquitectura de microservicios con API REST documentada, autenticación JWT, rate limiting y despliegue automatizado con Docker.",
+      "Arquitectura de microservicios con API bien documentada, auth con JWT y deploy automatizado. Hecha para escalar sin dolores de cabeza.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
     technologies: ["Django REST", "Python", "Docker", "PostgreSQL"],
@@ -89,7 +89,7 @@ export const projects = [
     id: 6,
     title: "Portal Educativo",
     description:
-      "Plataforma de aprendizaje en línea con sistema de cursos, seguimiento de progreso, evaluaciones y certificaciones digitales.",
+      "Plataforma de cursos online con seguimiento de progreso, evaluaciones y certificados. El cliente quería algo tipo Udemy pero a su medida.",
     image:
       "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
     technologies: ["Django", "Python", "JavaScript", "Bootstrap", "CSS"],
@@ -121,9 +121,8 @@ export const skills = {
 export const aboutMe = {
   title: "Sobre Mí",
   paragraphs: [
-    "Soy un desarrollador Full Stack con más de 5 años de experiencia creando soluciones web que impulsan el crecimiento de negocios. Mi enfoque combina código limpio, arquitectura sólida y diseño centrado en el usuario.",
-    "Me especializo en el ecosistema Django/Python para el backend, construyendo APIs robustas y sistemas escalables. En el frontend, domino HTML, CSS, JavaScript, Tailwind CSS y Bootstrap para crear interfaces modernas y responsive.",
-    "Mi objetivo es ser tu aliado tecnológico: entender tu visión, traducirla en código y entregar productos que superen tus expectativas.",
+    "Llevo más de 5 años haciendo desarrollo web y cada proyecto me emociona como el primero. Fuera de la compu, me vas a encontrar jugando soccer con los amigos — no importa el día, si hay cancha, ahí estoy.",
+    "Me encanta conocer personas interesantes y tener esas pláticas que se extienden por horas sin darte cuenta. Soy super curioso — de los que se pierden investigando temas random a medianoche. Creo que eso es lo que me hace buen desarrollador: siempre quiero saber cómo funcionan las cosas por dentro.",
   ],
   highlights: [
     "Desarrollo web Full Stack end-to-end",

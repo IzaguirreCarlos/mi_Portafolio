@@ -13,9 +13,8 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
-    { label: 'Proyectos', href: '#proyectos' },
     { label: 'Sobre Mí', href: '#sobre-mi' },
-    { label: 'Habilidades', href: '#habilidades' },
+    { label: 'Proyectos', href: '#proyectos' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
