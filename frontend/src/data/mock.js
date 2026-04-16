@@ -32,7 +32,7 @@ export const projects = [
       "Una tienda online que armé de cero — carrito, pagos, inventario y un panel admin para que el cliente maneje todo sin depender de nadie.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    technologies: ["Django", "Python", "JavaScript", "Tailwind CSS", "PostgreSQL"],
+    technologies: ["Django", "Python", "PostgreSQL"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Full Stack",
@@ -44,7 +44,7 @@ export const projects = [
       "Panel de métricas en tiempo real para un negocio que necesitaba ver sus números claros. Gráficas interactivas, reportes automáticos y filtros por fecha.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    technologies: ["Python", "Django REST", "JavaScript", "Bootstrap", "Chart.js"],
+    technologies: ["Python", "Django REST", "Bootstrap", "Chart.js"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Backend",
@@ -56,7 +56,7 @@ export const projects = [
       "Sistema interno para una empresa: inventario, facturación, usuarios con roles. Lo hice pensando en que cualquier empleado pudiera usarlo sin capacitación larga.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    technologies: ["Django", "Python", "HTML", "CSS", "Bootstrap"],
+    technologies: ["Django", "Python", "Bootstrap"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Full Stack",
@@ -68,7 +68,7 @@ export const projects = [
       "Página corporativa que convierte visitantes en clientes. Diseño responsive, animaciones suaves y formulario de contacto conectado directo al correo del dueño.",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    technologies: ["Responsive Design", "SEO"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Frontend",
@@ -92,7 +92,7 @@ export const projects = [
       "Plataforma de cursos online con seguimiento de progreso, evaluaciones y certificados. El cliente quería algo tipo Udemy pero a su medida.",
     image:
       "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
-    technologies: ["Django", "Python", "JavaScript", "Bootstrap", "CSS"],
+    technologies: ["Django", "Python", "Bootstrap"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Full Stack",
