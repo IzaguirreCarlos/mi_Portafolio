@@ -8,9 +8,9 @@ export const personalInfo = {
   tagline: "Construyo experiencias digitales que impulsan negocios",
   description:
     "Especializado en crear aplicaciones web modernas, escalables y de alto rendimiento utilizando Django, Python, JavaScript y tecnologías frontend de vanguardia. Transformo ideas en productos digitales que generan resultados reales.",
-  email: "contacto@carlosizaguirre.dev",
-  phone: "+504 XXXX-XXXX",
-  location: "Honduras",
+  email: "carlosizaguirres705@gmail.com",
+  phone: "+1 470-529-4775",
+  location: "Atlanta, Georgia",
   social: {
     github: "https://github.com/carlosizaguirre",
     linkedin: "https://linkedin.com/in/carlosizaguirre",
