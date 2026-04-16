@@ -1,45 +1,39 @@
 import React from 'react';
 import {
-  Code2,
-  Paintbrush,
-  FileCode2,
-  Wind,
-  LayoutGrid,
-  Smartphone,
-  Terminal,
-  Server,
-  Database,
-  HardDrive,
-  Globe,
-  GitBranch,
   MapPin,
   Briefcase,
   CheckCircle2,
+  Smartphone,
+  Globe,
+  Code2,
+  Server,
 } from 'lucide-react';
 import { stats, aboutMe, personalInfo } from '../../data/mock';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
+const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
+
 const frontendSkills = [
-  { name: 'HTML5', icon: Code2 },
-  { name: 'CSS3', icon: Paintbrush },
-  { name: 'JavaScript', icon: FileCode2 },
-  { name: 'Tailwind', icon: Wind },
-  { name: 'Bootstrap', icon: LayoutGrid },
-  { name: 'Responsive', icon: Smartphone },
+  { name: 'HTML5', icon: `${DEVICON}/html5/html5-original.svg` },
+  { name: 'CSS3', icon: `${DEVICON}/css3/css3-original.svg` },
+  { name: 'JavaScript', icon: `${DEVICON}/javascript/javascript-original.svg` },
+  { name: 'Tailwind', icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
+  { name: 'Bootstrap', icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
+  { name: 'Responsive', icon: null },
 ];
 
 const backendSkills = [
-  { name: 'Python', icon: Terminal },
-  { name: 'Django', icon: Server },
-  { name: 'Django REST', icon: Database },
-  { name: 'PostgreSQL', icon: HardDrive },
-  { name: 'API REST', icon: Globe },
-  { name: 'Git', icon: GitBranch },
+  { name: 'Python', icon: `${DEVICON}/python/python-original.svg` },
+  { name: 'Django', icon: `${DEVICON}/django/django-plain.svg` },
+  { name: 'Django REST', icon: `${DEVICON}/djangorest/djangorest-original.svg` },
+  { name: 'PostgreSQL', icon: `${DEVICON}/postgresql/postgresql-original.svg` },
+  { name: 'API REST', icon: null },
+  { name: 'Git', icon: `${DEVICON}/git/git-original.svg` },
 ];
 
 const BentoCard = ({ children, className = '', delay = 0, isVisible }) => (
   <div
-    className={`bg-[#0e0e0e] rounded-2xl border border-neutral-800/40 p-6 transition-all duration-700 hover:border-emerald-500/20 hover:shadow-[0_0_40px_rgba(16,185,129,0.04)] ${
+    className={`bg-[#0e0e0e] rounded-2xl border border-neutral-800/40 p-5 transition-all duration-700 hover:border-emerald-500/20 hover:shadow-[0_0_40px_rgba(16,185,129,0.04)] ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
     } ${className}`}
     style={{ transitionDelay: `${delay}ms` }}
@@ -49,7 +43,7 @@ const BentoCard = ({ children, className = '', delay = 0, isVisible }) => (
 );
 
 const StatCard = ({ stat, delay, isVisible }) => (
-  <BentoCard delay={delay} isVisible={isVisible} className="flex flex-col items-center justify-center text-center min-h-[140px]">
+  <BentoCard delay={delay} isVisible={isVisible} className="flex flex-col items-center justify-center text-center min-h-[120px]">
     <div className="text-3xl md:text-4xl font-bold text-emerald-400 font-mono mb-2">
       {stat.value}
     </div>
@@ -59,15 +53,32 @@ const StatCard = ({ stat, delay, isVisible }) => (
   </BentoCard>
 );
 
+const SkillIcon = ({ skill }) => {
+  if (skill.icon) {
+    return (
+      <img
+        src={skill.icon}
+        alt={skill.name}
+        className="w-8 h-8 object-contain"
+        loading="lazy"
+      />
+    );
+  }
+  // Fallback lucide icons for skills without a logo
+  if (skill.name === 'Responsive') return <Smartphone size={28} className="text-emerald-400" />;
+  if (skill.name === 'API REST') return <Globe size={28} className="text-emerald-400" />;
+  return <Code2 size={28} className="text-neutral-400" />;
+};
+
 const BentoGrid = () => {
   const [ref, isVisible] = useScrollAnimation(0.08);
 
   return (
-    <section id="sobre-mi" ref={ref} className="relative py-20 md:py-28 bg-[#050505]">
+    <section id="sobre-mi" ref={ref} className="relative py-10 md:py-14 bg-[#050505]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Label */}
-        <div className="mb-12">
-          <span className="text-sm font-mono text-emerald-400 mb-3 block">
+        <div className="mb-6">
+          <span className="text-sm font-mono text-emerald-400 mb-2 block">
             {'// Quien soy'}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -76,7 +87,7 @@ const BentoGrid = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
 
           {/* About Me - Large Card */}
           <BentoCard
@@ -85,25 +96,25 @@ const BentoGrid = () => {
             className="sm:col-span-2 lg:row-span-2 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <Briefcase size={18} className="text-emerald-400" />
+              <div className="flex items-center gap-2 mb-4">
+                <Briefcase size={16} className="text-emerald-400" />
                 <span className="text-sm font-mono text-emerald-400">
                   {aboutMe.title}
                 </span>
               </div>
-              <div className="space-y-4 mb-6">
+              <div className="space-y-3 mb-5">
                 {aboutMe.paragraphs.map((p, i) => (
-                  <p key={i} className="text-neutral-400 leading-relaxed text-[15px]">
+                  <p key={i} className="text-neutral-400 leading-relaxed text-[14px]">
                     {p}
                   </p>
                 ))}
               </div>
             </div>
-            <div className="space-y-2.5 pt-4 border-t border-neutral-800/40">
+            <div className="space-y-2 pt-3 border-t border-neutral-800/40">
               {aboutMe.highlights.map((item, i) => (
-                <div key={i} className="flex items-center gap-2.5">
-                  <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
-                  <span className="text-neutral-400 text-sm">{item}</span>
+                <div key={i} className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-emerald-400 flex-shrink-0" />
+                  <span className="text-neutral-400 text-[13px]">{item}</span>
                 </div>
               ))}
             </div>
@@ -121,65 +132,53 @@ const BentoGrid = () => {
 
           {/* Frontend Skills */}
           <BentoCard delay={450} isVisible={isVisible} className="sm:col-span-2">
-            <div className="flex items-center gap-2 mb-5">
-              <Code2 size={18} className="text-emerald-400" />
+            <div className="flex items-center gap-2 mb-4">
+              <Code2 size={16} className="text-emerald-400" />
               <span className="text-sm font-mono text-emerald-400">Frontend</span>
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              {frontendSkills.map((skill) => {
-                const Icon = skill.icon;
-                return (
-                  <div
-                    key={skill.name}
-                    className="flex flex-col items-center gap-2.5 py-3 px-2 rounded-xl bg-[#0a0a0a] border border-neutral-800/30 hover:border-emerald-500/30 transition-colors duration-300 group"
-                  >
-                    <Icon
-                      size={22}
-                      className="text-neutral-500 group-hover:text-emerald-400 transition-colors duration-300"
-                    />
-                    <span className="text-xs text-neutral-400 font-mono text-center">
-                      {skill.name}
-                    </span>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-3 gap-2.5">
+              {frontendSkills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center gap-2 py-3 px-2 rounded-xl bg-[#0a0a0a] border border-neutral-800/30 hover:border-emerald-500/30 transition-colors duration-300"
+                >
+                  <SkillIcon skill={skill} />
+                  <span className="text-[11px] text-neutral-400 font-mono text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </BentoCard>
 
           {/* Backend Skills */}
           <BentoCard delay={550} isVisible={isVisible} className="sm:col-span-2">
-            <div className="flex items-center gap-2 mb-5">
-              <Server size={18} className="text-emerald-400" />
+            <div className="flex items-center gap-2 mb-4">
+              <Server size={16} className="text-emerald-400" />
               <span className="text-sm font-mono text-emerald-400">Backend</span>
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              {backendSkills.map((skill) => {
-                const Icon = skill.icon;
-                return (
-                  <div
-                    key={skill.name}
-                    className="flex flex-col items-center gap-2.5 py-3 px-2 rounded-xl bg-[#0a0a0a] border border-neutral-800/30 hover:border-emerald-500/30 transition-colors duration-300 group"
-                  >
-                    <Icon
-                      size={22}
-                      className="text-neutral-500 group-hover:text-emerald-400 transition-colors duration-300"
-                    />
-                    <span className="text-xs text-neutral-400 font-mono text-center">
-                      {skill.name}
-                    </span>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-3 gap-2.5">
+              {backendSkills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center gap-2 py-3 px-2 rounded-xl bg-[#0a0a0a] border border-neutral-800/30 hover:border-emerald-500/30 transition-colors duration-300"
+                >
+                  <SkillIcon skill={skill} />
+                  <span className="text-[11px] text-neutral-400 font-mono text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </BentoCard>
 
           {/* Location Card */}
           <BentoCard delay={650} isVisible={isVisible} className="flex flex-col items-center justify-center text-center">
-            <MapPin size={24} className="text-emerald-400 mb-3" />
+            <MapPin size={22} className="text-emerald-400 mb-2" />
             <span className="text-white font-medium text-sm mb-1">
               {personalInfo.location}
             </span>
-            <span className="text-xs text-neutral-500 font-mono">
+            <span className="text-[11px] text-neutral-500 font-mono">
               Trabajo remoto global
             </span>
           </BentoCard>
@@ -187,7 +186,7 @@ const BentoGrid = () => {
           {/* Code Terminal Card */}
           <BentoCard delay={700} isVisible={isVisible} className="sm:col-span-2 lg:col-span-3 overflow-hidden !p-0">
             {/* Terminal Header */}
-            <div className="flex items-center gap-2 px-5 py-3 bg-[#0a0a0a] border-b border-neutral-800/40">
+            <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0a0a0a] border-b border-neutral-800/40">
               <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
               <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
               <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
@@ -195,10 +194,10 @@ const BentoGrid = () => {
                 perfil.py
               </span>
             </div>
-            <div className="p-5 font-mono text-sm leading-[1.8] overflow-x-auto">
+            <div className="p-4 font-mono text-sm leading-[1.7] overflow-x-auto">
               <div>
                 <span className="text-purple-400">class</span>{' '}
-                <span className="text-emerald-400">SeniorDev</span>
+                <span className="text-emerald-400">JuniorDev</span>
                 <span className="text-neutral-500">:</span>
               </div>
               <div className="ml-4">

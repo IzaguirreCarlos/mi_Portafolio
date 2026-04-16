@@ -82,12 +82,12 @@ const Projects = () => {
     <section
       id="proyectos"
       ref={ref}
-      className="relative py-24 md:py-32 bg-[#050505]"
+      className="relative py-12 md:py-16 bg-[#050505]"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-16">
-          <span className="text-sm font-mono text-emerald-400 mb-3 block">
+        <div className="mb-8">
+          <span className="text-sm font-mono text-emerald-400 mb-2 block">
             {'// Mis Proyectos'}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -100,7 +100,7 @@ const Projects = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap gap-3 mb-8">
           {categories.map((cat) => (
             <button
               key={cat}

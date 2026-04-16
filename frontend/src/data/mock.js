@@ -4,7 +4,7 @@
 export const personalInfo = {
   name: "Carlos Alberto",
   lastName: "Izaguirre",
-  role: "Senior Full Stack Developer",
+  role: "Junior Full Stack Developer",
   tagline: "Construyo experiencias digitales que impulsan negocios",
   description:
     "Construyo aplicaciones web completas — desde la base de datos hasta el pixel final. Django y Python en el back, JavaScript y Tailwind en el front. Si tienes una idea, yo la hago realidad.",

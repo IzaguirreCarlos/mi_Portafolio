@@ -31,11 +31,11 @@ const Contact = () => {
     <section
       id="contacto"
       ref={ref}
-      className="relative py-24 md:py-32 bg-[#080808]"
+      className="relative py-12 md:py-16 bg-[#080808]"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-8">
           <span className="text-sm font-mono text-emerald-400 mb-3 block">
             {'// Hablemos'}
           </span>
