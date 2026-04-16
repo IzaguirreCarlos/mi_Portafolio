@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import { projects } from '../../data/mock';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { getProjects } from '../../lib/api';
 
 const ProjectCard = ({ project, index, isVisible }) => (
   <div
@@ -59,7 +59,14 @@ const ProjectCard = ({ project, index, isVisible }) => (
 const Projects = () => {
   const [ref, isVisible] = useScrollAnimation();
   const [filter, setFilter] = useState('Todos');
+  const [projects, setProjects] = useState([]);
   const categories = ['Todos', 'Full Stack', 'Frontend', 'Backend'];
+
+  useEffect(() => {
+    getProjects()
+      .then((res) => setProjects(res.data))
+      .catch(() => {});
+  }, []);
 
   const filteredProjects =
     filter === 'Todos'

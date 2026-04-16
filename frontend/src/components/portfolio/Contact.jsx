@@ -3,6 +3,7 @@ import { Send, Mail, MapPin, Phone } from 'lucide-react';
 import { personalInfo } from '../../data/mock';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { toast } from '../../hooks/use-toast';
+import { sendContact } from '../../lib/api';
 
 const Contact = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -13,18 +14,25 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    // MOCK: Simulates sending a message (no backend yet)
-    setTimeout(() => {
+    try {
+      await sendContact(form);
       toast({
         title: 'Mensaje enviado',
         description: 'Gracias por contactarme. Te responderé pronto.',
       });
       setForm({ name: '', email: '', message: '' });
+    } catch {
+      toast({
+        title: 'Error',
+        description: 'No se pudo enviar el mensaje. Intenta de nuevo.',
+        variant: 'destructive',
+      });
+    } finally {
       setSending(false);
-    }, 1500);
+    }
   };
 
   return (
