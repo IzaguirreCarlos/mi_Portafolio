@@ -35,18 +35,6 @@ const ProjectCard = ({ project, index, isVisible }) => (
         {project.description}
       </p>
 
-      {/* Tech Tags */}
-      <div className="flex flex-wrap gap-2 mb-5">
-        {project.technologies.map((tech, i) => (
-          <span
-            key={i}
-            className="px-2.5 py-1 text-xs bg-neutral-800/80 text-neutral-400 rounded-md font-mono"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
       {/* Links */}
       <div className="flex items-center gap-4 pt-4 border-t border-neutral-800/50">
         <a
