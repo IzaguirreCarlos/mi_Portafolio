@@ -70,8 +70,6 @@ const SkillIcon = ({ skill }) => {
   return <Code2 size={28} className="text-neutral-400" />;
 };
 
-const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_fullstack-showcase-103/artifacts/u5wzqjtg_20200425_160851_Original.JPG';
-
 const BentoGrid = () => {
   const [ref, isVisible] = useScrollAnimation(0.08);
 
@@ -91,33 +89,11 @@ const BentoGrid = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
 
-          {/* Profile Photo Card */}
+          {/* About Me Card */}
           <BentoCard
             delay={0}
             isVisible={isVisible}
-            className="sm:col-span-2 lg:col-span-2 lg:row-span-2 !p-0 overflow-hidden"
-          >
-            <div className="relative w-full h-full min-h-[320px]">
-              <img
-                src={PROFILE_IMAGE}
-                alt="Carlos Alberto Izaguirre"
-                className="w-full h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <span className="text-sm font-mono text-emerald-400">Carlos Alberto</span>
-                <p className="text-xs text-neutral-400 mt-1">Junior Full Stack Developer</p>
-              </div>
-            </div>
-          </BentoCard>
-
-          {/* Stat Cards */}
-
-          {/* About Me Card */}
-          <BentoCard
-            delay={500}
-            isVisible={isVisible}
-            className="sm:col-span-2 lg:col-span-2 flex flex-col justify-between"
+            className="sm:col-span-2 lg:row-span-2 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">

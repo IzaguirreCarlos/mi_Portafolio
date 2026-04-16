@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../../data/mock';
 
+const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_fullstack-showcase-103/artifacts/u5wzqjtg_20200425_160851_Original.JPG';
+
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
@@ -51,108 +53,109 @@ const Hero = () => {
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 w-full">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 mb-10 rounded-full border border-emerald-500/20 bg-emerald-500/5">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-sm font-mono text-emerald-400">
-            Disponible para proyectos
-          </span>
-        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+          {/* Left: Content */}
+          <div className="flex-1">
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 mb-10 rounded-full border border-emerald-500/20 bg-emerald-500/5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-sm font-mono text-emerald-400">
+                Disponible para proyectos
+              </span>
+            </div>
 
-        {/* Name + CTAs Row */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-6">
-          {/* Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight">
-            {personalInfo.name}
-            <span className="block text-emerald-400 mt-1">
-              {personalInfo.lastName}
-            </span>
-          </h1>
+            {/* Name */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+              {personalInfo.name}
+              <span className="block text-emerald-400 mt-1">
+                {personalInfo.lastName}
+              </span>
+            </h1>
 
-          {/* CTA Buttons - Desktop only (right side) */}
-          <div className="hidden lg:flex flex-col gap-3 shrink-0 pb-3">
-            <button
-              onClick={() => scrollTo('#proyectos')}
-              className="px-8 py-3.5 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] active:scale-[0.97] whitespace-nowrap"
-            >
-              Ver Proyectos
-            </button>
-            <button
-              onClick={() => scrollTo('#contacto')}
-              className="px-8 py-3.5 border border-neutral-700 text-neutral-300 rounded-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300 active:scale-[0.97] whitespace-nowrap"
-            >
-              Contáctame
-            </button>
+            {/* Typing Role */}
+            <div className="flex items-center gap-2 mb-8">
+              <span className="text-emerald-500/50 font-mono text-xl">{'>'}</span>
+              <span className="text-xl md:text-2xl text-neutral-300 font-mono">
+                {displayText}
+                <span
+                  className={`text-emerald-400 transition-opacity duration-100 ${
+                    showCursor ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  _
+                </span>
+              </span>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-neutral-400 leading-relaxed mb-10 max-w-xl">
+              {personalInfo.description}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <button
+                onClick={() => scrollTo('#proyectos')}
+                className="px-8 py-3.5 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] active:scale-[0.97]"
+              >
+                Ver Proyectos
+              </button>
+              <button
+                onClick={() => scrollTo('#contacto')}
+                className="px-8 py-3.5 border border-neutral-700 text-neutral-300 rounded-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300 active:scale-[0.97]"
+              >
+                Contáctame
+              </button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-6">
+              <a
+                href={personalInfo.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href={personalInfo.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
+                aria-label="Email"
+              >
+                <Mail size={20} />
+              </a>
+              <div className="w-12 h-px bg-neutral-800" />
+              <span className="text-xs text-neutral-600 font-mono">
+                {personalInfo.location}
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Typing Role */}
-        <div className="flex items-center gap-2 mb-8">
-          <span className="text-emerald-500/50 font-mono text-xl">{'>'}</span>
-          <span className="text-xl md:text-2xl text-neutral-300 font-mono">
-            {displayText}
-            <span
-              className={`text-emerald-400 transition-opacity duration-100 ${
-                showCursor ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              _
-            </span>
-          </span>
-        </div>
-
-        {/* Description */}
-        <p className="text-lg text-neutral-400 leading-relaxed mb-10 max-w-2xl">
-          {personalInfo.description}
-        </p>
-
-        {/* CTA Buttons - Mobile only */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-12 lg:hidden">
-          <button
-            onClick={() => scrollTo('#proyectos')}
-            className="px-8 py-3.5 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] active:scale-[0.97]"
-          >
-            Ver Proyectos
-          </button>
-          <button
-            onClick={() => scrollTo('#contacto')}
-            className="px-8 py-3.5 border border-neutral-700 text-neutral-300 rounded-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300 active:scale-[0.97]"
-          >
-            Contáctame
-          </button>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex items-center gap-6">
-          <a
-            href={personalInfo.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
-            aria-label="GitHub"
-          >
-            <Github size={20} />
-          </a>
-          <a
-            href={personalInfo.social.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
-            aria-label="LinkedIn"
-          >
-            <Linkedin size={20} />
-          </a>
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="text-neutral-600 hover:text-emerald-400 transition-colors duration-300"
-            aria-label="Email"
-          >
-            <Mail size={20} />
-          </a>
-          <div className="w-12 h-px bg-neutral-800" />
-          <span className="text-xs text-neutral-600 font-mono">
-            {personalInfo.location}
-          </span>
+          {/* Right: Profile Photo */}
+          <div className="shrink-0 flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-2 border-neutral-800/50 shadow-[0_0_60px_rgba(16,185,129,0.08)]">
+                <img
+                  src={PROFILE_IMAGE}
+                  alt="Carlos Alberto Izaguirre"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Decorative border glow */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-transparent to-emerald-500/10 -z-10 blur-sm" />
+            </div>
+          </div>
         </div>
       </div>
 
