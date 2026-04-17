@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../../data/mock';
 
-const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_fullstack-showcase-103/artifacts/u5wzqjtg_20200425_160851_Original.JPG';
+const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_fullstack-showcase-103/artifacts/mhh1w2tf_Gemini_Generated_portafolio.png';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
