@@ -145,11 +145,11 @@ const Hero = () => {
           {/* Right: Profile Photo */}
           <div className="shrink-0 flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-2 border-neutral-800/50 shadow-[0_0_60px_rgba(16,185,129,0.08)]">
+              <div className="w-64 h-80 sm:w-72 sm:h-[380px] lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-neutral-800/50 shadow-[0_0_60px_rgba(16,185,129,0.08)]">
                 <img
                   src={PROFILE_IMAGE}
                   alt="Carlos Alberto Izaguirre"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               {/* Decorative border glow */}
